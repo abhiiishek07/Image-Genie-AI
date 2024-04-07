@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { Button } from "../ui/button";
+import logo from "../../../public/logo-icon.png";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -14,12 +15,10 @@ const Sidebar = () => {
     <aside className="hidden h-screen w-72 bg-white p-5 shadow-md shadow-purple-200/50 lg:flex">
       <div className="flex flex-col gap-4 size-full">
         <Link href="/" className="flex items-center gap-2 md:py-2">
-          <Image
-            src="/assets/images/logo-text.svg"
-            alt="logo"
-            width={280}
-            height={28}
-          />
+          <Image src={logo.src} alt="logo" width={28} height={28} />
+          <p className="font-extrabold text-2xl text-purple-500">
+            ImageGenieAI
+          </p>
         </Link>
 
         <nav className=" h-full flex-col justify-between md:flex md:gap-4">
