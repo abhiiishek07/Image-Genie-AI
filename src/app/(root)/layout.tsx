@@ -1,10 +1,21 @@
+"use client";
+
 import MobileNav from "@/components/shared/MobileNav";
 import Sidebar from "@/components/shared/Sidebar";
+import { Toaster } from "@/components/ui/toaster";
 import React from "react";
+
+import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="flex min-h-screen w-full flex-col bg-white lg:flex-row">
+      <ProgressBar
+        height="4px"
+        color="#593EFF"
+        options={{ showSpinner: false }}
+        shallowRouting
+      />
       <Sidebar />
       <MobileNav />
       <div className="mt-16 flex-1 overflow-auto py-8 lg:mt-0 lg:max-h-screen lg:py-10">
@@ -12,6 +23,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           {children}
         </div>
       </div>
+
+      <Toaster />
     </main>
   );
 };
